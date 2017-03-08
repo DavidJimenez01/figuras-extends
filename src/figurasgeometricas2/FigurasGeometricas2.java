@@ -29,7 +29,7 @@ public class FigurasGeometricas2 {
      */
     private void mensajeBienvenida(){
         System.out.println("------BIENVENIDO-----");
-        System.out.println("------Duvansito-----");
+        System.out.println("------USUARIO-----");
     }
     
     /**

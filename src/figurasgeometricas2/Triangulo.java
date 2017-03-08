@@ -54,6 +54,15 @@ public class Triangulo {
             System.out.println("Lado3: " + darLado3());
             System.out.println("Perimetro: " + darPermietro());
             System.out.println("Area: " + darArea());
+            if(clasificar()==1){
+                System.out.println("Es un triangulo isoceles");
+            }else{
+                if(clasificar()==2){
+                    System.out.println("Es un triangulo escaleno");
+                }else{
+                    System.out.println("Es un triangulo equilatero");
+                }
+            }
         } else {
             System.out.println("No es un triangulo");
         }    
@@ -102,7 +111,31 @@ public class Triangulo {
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
     }
+    /**
+     * Metodo que retorna 1 para isoceles, 2 para escaleno y 3 para equilatero
+     * @return 
+     */
     
+    private byte clasificar(){
+        if(darLado1()==darLado2()&&darLado1()!=darLado3()&&darLado2()!=darLado3()){
+            return 1;
+        }else{
+            if(darLado1()==darLado3()&&darLado1()!=darLado3()){
+                return 1;
+            }else{
+                if(darLado2()==darLado3()){
+                    return 1;
+                }else{
+                    if(darLado1()!=darLado2()&&darLado1()!=darLado3()&&darLado2()!=darLado3()){
+                        return 2;
+                    }else{
+                        return 3;
+                    }
+                }
+            }
+        }
+        
+    }
     /**
      * 
      * Metodo que retorna el perimetro del triangulo
