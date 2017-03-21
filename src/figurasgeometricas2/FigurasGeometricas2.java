@@ -58,51 +58,44 @@ public class FigurasGeometricas2 {
      * Metodo que toma las cordenadas del triangulo y llama al objeto para las operaciones
      */
     private void inicicarTriangulo(){
-        double x, y;
+        double x1, y1, x2, y2, x3, y3;
         System.out.println("Digite cordenada x1");
-        x = teclado.nextDouble();
+        x1 = teclado.nextDouble();
         System.out.println("Digite cordenada y1");
-        y = teclado.nextDouble();
-        Punto punto1 = new Punto(x, y);
+        y1 = teclado.nextDouble();
         System.out.println("Digite cordenada x2");
-        x = teclado.nextDouble();
+        x2 = teclado.nextDouble();
         System.out.println("Digite cordenada y2");
-        y = teclado.nextDouble();
-        Punto punto2 = new Punto(x, y);
+        y2 = teclado.nextDouble();
         System.out.println("Digite cordenada x3");
-        x = teclado.nextDouble();
+        x3 = teclado.nextDouble();
         System.out.println("Digite cordenada y3");
-        y = teclado.nextDouble();
-        Punto punto3 = new Punto(x, y);
-        Triangulo triangulo = new Triangulo(punto1, punto2, punto3);
+        y3 = teclado.nextDouble();
+        Triangulo triangulo = new Triangulo(x1,y1,x2,y2,x3,y3);
         triangulo.darResultados();        
     }
     /**
      * Metodo que toma las cordenadas del cuadrado y llama al objeto para las operaciones
      */
     private void iniciarCuadrado(){
-        double x,y;
+        double x1,y1,x2,y2,x3,y3,x4,y4;
         System.out.println("Digite cordenada x1");
-        x = teclado.nextDouble();
+        x1= teclado.nextDouble();
         System.out.println("Digite cordenada y1");
-        y = teclado.nextDouble();
-        Punto punto1 = new Punto(x, y);
+        y1 = teclado.nextDouble();
         System.out.println("Digite cordenada x2");
-        x = teclado.nextDouble();
+        x2 = teclado.nextDouble();
         System.out.println("Digite cordenada y2");
-        y = teclado.nextDouble();
-        Punto punto2 = new Punto(x, y);
+        y2 = teclado.nextDouble();
         System.out.println("Digite cordenada x3");
-        x = teclado.nextDouble();
+        x3 = teclado.nextDouble();
         System.out.println("Digite cordenada y3");
-        y = teclado.nextDouble();
-        Punto punto3 = new Punto(x, y);
+        y3 = teclado.nextDouble();
         System.out.println("Digite cordenada x4");
-        x = teclado.nextDouble();
+        x4 = teclado.nextDouble();
         System.out.println("Digite cordenada y4");
-        y = teclado.nextDouble();
-        Punto punto4 = new Punto(x, y);
-        Cuadrado cuadrado = new Cuadrado(punto1, punto2, punto3, punto4);
+        y4 = teclado.nextDouble();
+        Cuadrado cuadrado = new Cuadrado(x1,y1,x2,y2,x3,y3,x4,y4);
         cuadrado.darResultados();
         
     }
@@ -110,18 +103,16 @@ public class FigurasGeometricas2 {
      * Metodo que toma las cordenadas del cuadrado y llama al objeto para las operaciones
      */
     private void iniciarCirculo(){
-        double x,y;
+        double x1,y1,x2,y2;
         System.out.println("Digite cordenada x1");
-        x = teclado.nextDouble();
+        x1 = teclado.nextDouble();
         System.out.println("Digite cordenada y1");
-        y = teclado.nextDouble();
-        Punto punto1 = new Punto(x, y);
+        y1 = teclado.nextDouble();
         System.out.println("Digite cordenada x2");
-        x = teclado.nextDouble();
+        x2 = teclado.nextDouble();
         System.out.println("Digite cordenada y2");
-        y = teclado.nextDouble();
-        Punto punto2 = new Punto(x, y);
-        Circulo circulo = new Circulo(punto1, punto2);
+        y2 = teclado.nextDouble();
+        Circulo circulo = new Circulo(x1,y1,x2,y2);
         circulo.darResultados();
     }
 }

@@ -9,36 +9,43 @@ package figurasgeometricas2;
  *clase que representa un cuadrado con sus operaciones
  * @author David Jimenez - Duvan Poveda
  */
-public class Cuadrado {
+public class Cuadrado extends Puntos {
    /**
-     * Atributo que contiene la cordenada x1 y1
-     */
-    private Punto punto1;
+    * atributo que contiene la coordenada x3
+    */
+    private double x3;
     /**
-     * Atributo que contiene la cordenada x2 y2
+     * atributo que contiene la coordenada y3
      */
-    private Punto punto2;
+    private double y3;
     /**
-     * Atributo que contiene la cordenada x3 y3
+     * atributo que contiene la coordenada x4
      */
-    private Punto punto3;
+    private double x4;
     /**
-     * Atributo que contiene la cordenada x4 y4
+     * atributo que contiene la coordenada y4
      */
-    private Punto punto4;
-    /**
-     * Constuctor de la clase que inicializa las variables
-     * @param punto1
-     * @param punto2
-     * @param punto3 
-     * @param punto4
-     */
-    public Cuadrado(Punto punto1, Punto punto2, Punto punto3, Punto punto4) {
-        this.punto1 = punto1;
-        this.punto2 = punto2;
-        this.punto3 = punto3;
-        this.punto4 = punto4;
+    private double y4;
+/**
+ * constructor que inicializa las variables 
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ * @param x3
+ * @param y3
+ * @param x4
+ * @param y4 
+ */
+    public Cuadrado(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
+        super(x1, y1, x2, y2);
+        this.x3 = x3;
+        this.y3 = y3;
+        this.x4 = x4;
+        this.y4 = y4;
     }
+    
+    
     /**
      * Metodo que da los resultados del cuadrado
      */
@@ -75,8 +82,8 @@ public class Cuadrado {
      * @return 
      */
     private double darLado1(){
-        double auxiliarX = Math.pow(punto1.getX() - punto2.getX(), 2);
-        double auxiliarY = Math.pow(punto1.getY() - punto2.getY(), 2);
+        double auxiliarX = Math.pow(x1 - x2, 2);
+        double auxiliarY = Math.pow(y1 - y2, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -86,8 +93,8 @@ public class Cuadrado {
      * @return 
      */
     private double darLado2(){
-        double auxiliarX = Math.pow(punto2.getX() - punto3.getX(), 2);
-        double auxiliarY = Math.pow(punto2.getY() - punto3.getY(), 2);
+        double auxiliarX = Math.pow(x2 - x3, 2);
+        double auxiliarY = Math.pow(y2 - y3, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -97,8 +104,8 @@ public class Cuadrado {
      * @return 
      */
     private double darLado3(){
-        double auxiliarX = Math.pow(punto3.getX() - punto4.getX(), 2);
-        double auxiliarY = Math.pow(punto3.getY() - punto4.getY(), 2);
+        double auxiliarX = Math.pow(x3 - x4, 2);
+        double auxiliarY = Math.pow(y3 - y4, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -108,8 +115,8 @@ public class Cuadrado {
      * @return 
      */
     private double darLado4(){
-        double auxiliarX = Math.pow(punto4.getX() - punto1.getX(), 2);
-        double auxiliarY = Math.pow(punto4.getY() - punto1.getY(), 2);
+        double auxiliarX = Math.pow(x1 - x4, 2);
+        double auxiliarY = Math.pow(y1 - y4, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -132,61 +139,60 @@ public class Cuadrado {
         return area;
     }
     /**
-     * retorna la coordenada x1 y1
+     * retorna la coordenada x3
      * @return 
      */
-    public Punto getPunto1() {
-        return punto1;
+    public double getX3() {
+        return x3;
     }
-   /**
-     * retorna la coordenada x2 y2
-     * @return 
-     */
-    public Punto getPunto2() {
-        return punto2;
-    }
-   /**
-     * retorna la coordenada x3 y3
-     * @return 
-     */
-    public Punto getPunto3() {
-        return punto3;
-    }
-   /**
-     * retorna la coordenada x4 y4
-     * @return 
-     */
-    public Punto getPunto4() {
-        return punto4;
-    }
-  
     /**
-     * modifica la cordenada x1 y1
-     * @param punto1 
+     * modifica la coordenada x3
+     * @param x3 
      */
-    public void setPunto1(Punto punto1) {
-        this.punto1 = punto1;
+    public void setX3(double x3) {
+        this.x3 = x3;
     }
- /**
-     * modifica la cordenada x2 y2
-     * @param punto2
+    /**
+     * retorna la coordenada y3
+     * @return 
      */
-    public void setPunto2(Punto punto2) {
-        this.punto2 = punto2;
+    public double getY3() {
+        return y3;
     }
- /**
-     * modifica la cordenada x1 y1
-     * @param punto3 
+    /**
+     * modifica la coordenada y3
+     * @param y3 
      */
-    public void setPunto3(Punto punto3) {
-        this.punto3 = punto3;
+    public void setY3(double y3) {
+        this.y3 = y3;
     }
- /**
-     * modifica la cordenada x1 y1
-     * @param punto4 
+    /**
+     * retorna la coordenada x4
+     * @return 
      */
-    public void setPunto4(Punto punto4) {
-        this.punto4 = punto4;
+    public double getX4() {
+        return x4;
+    }
+    /**
+     * modifica la variable x4
+     * @param x4 
+     */
+    public void setX4(double x4) {
+        this.x4 = x4;
+    }
+    /**
+     * retorna la coordenada y4
+     * @return 
+     */
+    public double getY4() {
+        return y4;
+    }
+    /**
+     * modifica la variable y4
+     * @param y4 
+     */
+    public void setY4(double y4) {
+        this.y4 = y4;
     }
  
 }

@@ -9,23 +9,17 @@ package figurasgeometricas2;
  * Clase que representa un triangulo con sus operaciones
  * @author Johans Gonzalez
  */
-public class Triangulo {
+public class Triangulo extends Puntos{
     
     /**
-     * Atributo que contiene la cordenada x1 y1
-     */
-    private Punto punto1;
-    
-    /**
-     * Atributo que contiene la cordenada x2 y2
-     */    
-    private Punto punto2;
+     * Atributo que contiene la cordenada x3
+     */        
+    private double x3;
 
     /**
-     * Atributo que contiene la cordenada x3 y3
-     */        
-    private Punto punto3;
-    
+     * atributo que contiene la coordenada y3
+     */
+    private double y3;
     
     /**
      * Guarda el perimetro del triangulo
@@ -33,16 +27,27 @@ public class Triangulo {
     private double perimetro;
 
     /**
-     * Constuctor de la clse que inicializa las variables
-     * @param punto1
-     * @param punto2
-     * @param punto3 
+     *constructor que inicializa las variables
+     * @param x3
+     * @param y3
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
      */
-    public Triangulo(Punto punto1, Punto punto2, Punto punto3) {
-        this.punto1 = punto1;
-        this.punto2 = punto2;
-        this.punto3 = punto3;
+    public Triangulo(double x1,double y1, double x2, double y2, double x3, double y3) {
+        super(x1, y1, x2, y2);
+        this.x3 = x3;
+        this.y3 = y3;
+        
     }
+
+    
+
+    
+
+  
+    
     
     /**
      * Metodo que da los resultados del triangulo
@@ -81,8 +86,8 @@ public class Triangulo {
      * @return 
      */
     private double darLado1(){
-        double auxiliarX = Math.pow(punto2.getX() - punto1.getX(), 2);
-        double auxiliarY = Math.pow(punto2.getY() - punto1.getY(), 2);
+        double auxiliarX = Math.pow(x2 - x1, 2 );
+        double auxiliarY = Math.pow(y2 - y1, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -93,8 +98,8 @@ public class Triangulo {
      * @return 
      */
     private double darLado2(){
-        double auxiliarX = Math.pow(punto3.getX() - punto2.getX(), 2);
-        double auxiliarY = Math.pow(punto3.getY() - punto2.getY(), 2);
+        double auxiliarX = Math.pow(x3 - x2, 2);
+        double auxiliarY = Math.pow(y3 - y2, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -105,8 +110,8 @@ public class Triangulo {
      * @return 
      */
     private double darLado3(){
-        double auxiliarX = Math.pow(punto1.getX() - punto3.getX(), 2);
-        double auxiliarY = Math.pow(punto1.getY() - punto3.getY(), 2);
+        double auxiliarX = Math.pow(x1 - x3, 2);
+        double auxiliarY = Math.pow(y1 - y3, 2);
         
         double lado = Math.sqrt(auxiliarX +  auxiliarY);
         return lado;
@@ -117,6 +122,7 @@ public class Triangulo {
      */
     
     private byte clasificar(){
+        
         if(darLado1()==darLado2()&&darLado1()!=darLado3()&&darLado2()!=darLado3()){
             return 1;
         }else{
@@ -159,65 +165,47 @@ public class Triangulo {
         double area =  Math.sqrt((semiperimetro * lado1 * lado2 * lado3));
         return area;
     }
-    
-    /**
-     * Metodo que retorna el tipo de triangulo
-     * @return Tipo de triangulo
-     */
-    public String darTipoTriangulo() {
-        return "";
+/**
+ * retorna el valor de x3 
+ * @return 
+ */
+    public double getX3() {
+        return x3;
     }
-
-    
     /**
-     * Retorna la cordenada x1 y1
+     * modifica el valor de x3
+     * @param x3 
+     */
+    public void setX3(double x3) {
+        this.x3 = x3;
+    }
+    /**
+     * retorna el valor de y3
      * @return 
      */
-    public Punto getPunto1() {
-        return punto1;
+    public double getY3() {
+        return y3;
     }
-
     /**
-     * Modifica la cordenada x1 y1
-     * @param punto1 
+     * modifica el valor de y3
+     * @param y3 
      */
-    public void setPunto1(Punto punto1) {
-        this.punto1 = punto1;
+    public void setY3(double y3) {
+        this.y3 = y3;
     }
-
     /**
-     * Retorna la cordenada x2 y2
+     * variable que retorna el valor del perimetro
      * @return 
-     */    
-    public Punto getPunto2() {
-        return punto2;
+     */
+    public double getPerimetro() {
+        return perimetro;
     }
-
     /**
-     * Modifica la cordenada x2 y2
-     * @param punto2 
-     */    
-    public void setPunto2(Punto punto2) {
-        this.punto2 = punto2;
+     * modifica el valor del perimetro
+     * @param perimetro 
+     */
+    public void setPerimetro(double perimetro) {
+        this.perimetro = perimetro;
     }
-
-    /**
-     * Retorna la cordenada x3 y3
-     * @return 
-     */    
-    public Punto getPunto3() {
-        return punto3;
-    }
-
-    /**
-     * Modifica la cordenada x3 y3
-     * @param punto3 
-     */    
-    public void setPunto3(Punto punto3) {
-        this.punto3 = punto3;
-    }
-    
-    
-        
     
 }
